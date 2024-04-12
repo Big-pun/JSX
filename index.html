@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .carte {
+            width: 300px;
+            padding: 10px;
+            background-color: #103A49;
+            color: #D8FFD6;
+            text-align: center;
+            margin: 10px auto;
+        }
+
+        .carte h1 {
+            border-bottom: 1px solid white;
+        }
+
+        .carte p {
+            margin: 0;
+        }
+
+        .carte div {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        let nom = <h1>Daniel Gélinas</h1>
+        let email = <h2>dan.gelinas@mail.com</h2>
+        let tel = <h3>418-123-4567</h3>
+        let adresse = <div>
+            <p>258 rue des Pins</p>
+            <p>Montréal, Qc</p>
+            <p>H1H 1H1</p>
+        </div>
+        let hobbies = <p> Programmation - Jeux vidéos - Course a pied</p>
+
+        let texte = <div className="carte">
+            {nom}
+            {email}
+            {tel}
+            {adresse}
+            {hobbies}
+        </div>
+
+        const div = document.getElementById('root'); // récupère l'élément avec l'id root
+        const root = ReactDOM.createRoot(div); // crée un root react
+        root.render(texte); // affiche le texte dans le root
+    </script>
+
+
+
+
+</body>
+
+</html>
