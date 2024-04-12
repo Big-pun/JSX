@@ -34,6 +34,7 @@
 <body>
 
     <div id="root"></div>
+    <div id="root2"></div>
 
     <script type="text/babel">
 
@@ -60,9 +61,38 @@
         root.render(texte); // affiche le texte dans le root
     </script>
 
+    <script type="text/babel">
+        let personne = {
+            nom: "Pierre Lapointe",
+            email: "pierre.lp@gmail.com",
+            tel: "514-123-4567",
+            adresse: {
+                rue: "123 rue des Pins",
+                ville: "Montréal",
+                province: "Qc",
+                codePostal: "H1H 1H1"
+            },
+            hobbies: ["Programmation", "Jeux vidéos", "Course a pied"]
+        }
 
+        let person = <div className="carte">
+            <h1>{personne.nom}</h1>
+            <h2>{personne.email}</h2>
+            <h3>{personne.tel}</h3>
+            <div>
+                <p>{personne.adresse.rue}</p>
+                <p>{personne.adresse.ville}, {personne.adresse.province}</p>
+                <p>{personne.adresse.codePostal}</p>
+            </div>
+            <p>{personne.hobbies.join(" - ")}</p>
+        </div>
 
+        const div2 = document.getElementById('root2'); // récupère l'élément avec l'id root
+        const root2 = ReactDOM.createRoot(div2); // crée un root react
+        root2.render(person); // affiche le texte dans le root
 
+        
+     </script>
 </body>
 
 </html>
